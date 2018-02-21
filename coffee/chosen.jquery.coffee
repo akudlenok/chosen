@@ -453,6 +453,7 @@ class Chosen extends AbstractChosen
 
   show_create_option: (terms) ->
     create_option_html = this.get_create_option_html(terms)
+    this.result_do_highlight $(create_option_html)
     @search_results.append create_option_html
 
   create_option_clear: ->
