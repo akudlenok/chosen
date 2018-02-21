@@ -452,8 +452,8 @@ class Chosen extends AbstractChosen
     @form_field_jq.trigger("chosen:no_results", {chosen:this})
 
   show_create_option: (terms) ->
-    create_option_html = this.get_create_option_html(terms)
-    this.result_do_highlight $(create_option_html)
+    create_option_html = $('<li class="create-option active-result"><a>' + @create_option_text + '</a>: "' + terms + '"</li>')
+    this.result_do_highlight create_option_html
     @search_results.append create_option_html
 
   create_option_clear: ->
